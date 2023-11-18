@@ -20,14 +20,12 @@ Option Explicit On
  Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
  Global.System.ComponentModel.ToolboxItem(true),  _
  Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema"),  _
- Global.System.Xml.Serialization.XmlRootAttribute("ma_databaseDataSet"),  _
+ Global.System.Xml.Serialization.XmlRootAttribute("ma_databaseDataSet1"),  _
  Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")>  _
-Partial Public Class ma_databaseDataSet
+Partial Public Class ma_databaseDataSet1
     Inherits Global.System.Data.DataSet
     
-    Private tableusers As usersDataTable
-    
-    Private tableDataTable1 As DataTable1DataTable
+    Private tablestranke As strankeDataTable
     
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
@@ -58,11 +56,8 @@ Partial Public Class ma_databaseDataSet
         If (Me.DetermineSchemaSerializationMode(info, context) = Global.System.Data.SchemaSerializationMode.IncludeSchema) Then
             Dim ds As Global.System.Data.DataSet = New Global.System.Data.DataSet()
             ds.ReadXmlSchema(New Global.System.Xml.XmlTextReader(New Global.System.IO.StringReader(strSchema)))
-            If (Not (ds.Tables("users")) Is Nothing) Then
-                MyBase.Tables.Add(New usersDataTable(ds.Tables("users")))
-            End If
-            If (Not (ds.Tables("DataTable1")) Is Nothing) Then
-                MyBase.Tables.Add(New DataTable1DataTable(ds.Tables("DataTable1")))
+            If (Not (ds.Tables("stranke")) Is Nothing) Then
+                MyBase.Tables.Add(New strankeDataTable(ds.Tables("stranke")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -85,19 +80,9 @@ Partial Public Class ma_databaseDataSet
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property users() As usersDataTable
+    Public ReadOnly Property stranke() As strankeDataTable
         Get
-            Return Me.tableusers
-        End Get
-    End Property
-    
-    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
-     Global.System.ComponentModel.Browsable(false),  _
-     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property DataTable1() As DataTable1DataTable
-        Get
-            Return Me.tableDataTable1
+            Return Me.tablestranke
         End Get
     End Property
     
@@ -143,7 +128,7 @@ Partial Public Class ma_databaseDataSet
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
     Public Overrides Function Clone() As Global.System.Data.DataSet
-        Dim cln As ma_databaseDataSet = CType(MyBase.Clone,ma_databaseDataSet)
+        Dim cln As ma_databaseDataSet1 = CType(MyBase.Clone,ma_databaseDataSet1)
         cln.InitVars
         cln.SchemaSerializationMode = Me.SchemaSerializationMode
         Return cln
@@ -168,11 +153,8 @@ Partial Public Class ma_databaseDataSet
             Me.Reset
             Dim ds As Global.System.Data.DataSet = New Global.System.Data.DataSet()
             ds.ReadXml(reader)
-            If (Not (ds.Tables("users")) Is Nothing) Then
-                MyBase.Tables.Add(New usersDataTable(ds.Tables("users")))
-            End If
-            If (Not (ds.Tables("DataTable1")) Is Nothing) Then
-                MyBase.Tables.Add(New DataTable1DataTable(ds.Tables("DataTable1")))
+            If (Not (ds.Tables("stranke")) Is Nothing) Then
+                MyBase.Tables.Add(New strankeDataTable(ds.Tables("stranke")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -206,16 +188,10 @@ Partial Public Class ma_databaseDataSet
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
     Friend Overloads Sub InitVars(ByVal initTable As Boolean)
-        Me.tableusers = CType(MyBase.Tables("users"),usersDataTable)
+        Me.tablestranke = CType(MyBase.Tables("stranke"),strankeDataTable)
         If (initTable = true) Then
-            If (Not (Me.tableusers) Is Nothing) Then
-                Me.tableusers.InitVars
-            End If
-        End If
-        Me.tableDataTable1 = CType(MyBase.Tables("DataTable1"),DataTable1DataTable)
-        If (initTable = true) Then
-            If (Not (Me.tableDataTable1) Is Nothing) Then
-                Me.tableDataTable1.InitVars
+            If (Not (Me.tablestranke) Is Nothing) Then
+                Me.tablestranke.InitVars
             End If
         End If
     End Sub
@@ -223,26 +199,18 @@ Partial Public Class ma_databaseDataSet
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
     Private Sub InitClass()
-        Me.DataSetName = "ma_databaseDataSet"
+        Me.DataSetName = "ma_databaseDataSet1"
         Me.Prefix = ""
-        Me.Namespace = "http://tempuri.org/ma_databaseDataSet.xsd"
+        Me.Namespace = "http://tempuri.org/ma_databaseDataSet11.xsd"
         Me.EnforceConstraints = true
         Me.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
-        Me.tableusers = New usersDataTable()
-        MyBase.Tables.Add(Me.tableusers)
-        Me.tableDataTable1 = New DataTable1DataTable()
-        MyBase.Tables.Add(Me.tableDataTable1)
+        Me.tablestranke = New strankeDataTable()
+        MyBase.Tables.Add(Me.tablestranke)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-    Private Function ShouldSerializeusers() As Boolean
-        Return false
-    End Function
-    
-    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-    Private Function ShouldSerializeDataTable1() As Boolean
+    Private Function ShouldSerializestranke() As Boolean
         Return false
     End Function
     
@@ -257,7 +225,7 @@ Partial Public Class ma_databaseDataSet
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
     Public Shared Function GetTypedDataSetSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
-        Dim ds As ma_databaseDataSet = New ma_databaseDataSet()
+        Dim ds As ma_databaseDataSet1 = New ma_databaseDataSet1()
         Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
         Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
         Dim any As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
@@ -305,28 +273,29 @@ Partial Public Class ma_databaseDataSet
     End Function
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-    Public Delegate Sub usersRowChangeEventHandler(ByVal sender As Object, ByVal e As usersRowChangeEvent)
-    
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-    Public Delegate Sub DataTable1RowChangeEventHandler(ByVal sender As Object, ByVal e As DataTable1RowChangeEvent)
+    Public Delegate Sub strankeRowChangeEventHandler(ByVal sender As Object, ByVal e As strankeRowChangeEvent)
     
     '''<summary>
     '''Represents the strongly named DataTable class.
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class usersDataTable
-        Inherits Global.System.Data.TypedTableBase(Of usersRow)
+    Partial Public Class strankeDataTable
+        Inherits Global.System.Data.TypedTableBase(Of strankeRow)
         
-        Private columnusername As Global.System.Data.DataColumn
+        Private columnime As Global.System.Data.DataColumn
         
-        Private columnpass As Global.System.Data.DataColumn
+        Private columnpriimek As Global.System.Data.DataColumn
+        
+        Private columnnaslov As Global.System.Data.DataColumn
+        
+        Private columneposta As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub New()
             MyBase.New
-            Me.TableName = "users"
+            Me.TableName = "stranke"
             Me.BeginInit
             Me.InitClass
             Me.EndInit
@@ -359,17 +328,33 @@ Partial Public Class ma_databaseDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property usernameColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property imeColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnusername
+                Return Me.columnime
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property passColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property priimekColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnpass
+                Return Me.columnpriimek
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property naslovColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnnaslov
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property epostaColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columneposta
             End Get
         End Property
         
@@ -384,44 +369,44 @@ Partial Public Class ma_databaseDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As usersRow
+        Public Default ReadOnly Property Item(ByVal index As Integer) As strankeRow
             Get
-                Return CType(Me.Rows(index),usersRow)
+                Return CType(Me.Rows(index),strankeRow)
             End Get
         End Property
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event usersRowChanging As usersRowChangeEventHandler
+        Public Event strankeRowChanging As strankeRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event usersRowChanged As usersRowChangeEventHandler
+        Public Event strankeRowChanged As strankeRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event usersRowDeleting As usersRowChangeEventHandler
+        Public Event strankeRowDeleting As strankeRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event usersRowDeleted As usersRowChangeEventHandler
+        Public Event strankeRowDeleted As strankeRowChangeEventHandler
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Sub AddusersRow(ByVal row As usersRow)
+        Public Overloads Sub AddstrankeRow(ByVal row As strankeRow)
             Me.Rows.Add(row)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Function AddusersRow(ByVal username As String, ByVal pass As String) As usersRow
-            Dim rowusersRow As usersRow = CType(Me.NewRow,usersRow)
-            Dim columnValuesArray() As Object = New Object() {username, pass}
-            rowusersRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowusersRow)
-            Return rowusersRow
+        Public Overloads Function AddstrankeRow(ByVal ime As String, ByVal priimek As String, ByVal naslov As String, ByVal eposta As String) As strankeRow
+            Dim rowstrankeRow As strankeRow = CType(Me.NewRow,strankeRow)
+            Dim columnValuesArray() As Object = New Object() {ime, priimek, naslov, eposta}
+            rowstrankeRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowstrankeRow)
+            Return rowstrankeRow
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As usersDataTable = CType(MyBase.Clone,usersDataTable)
+            Dim cln As strankeDataTable = CType(MyBase.Clone,strankeDataTable)
             cln.InitVars
             Return cln
         End Function
@@ -429,53 +414,63 @@ Partial Public Class ma_databaseDataSet
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New usersDataTable()
+            Return New strankeDataTable()
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Friend Sub InitVars()
-            Me.columnusername = MyBase.Columns("username")
-            Me.columnpass = MyBase.Columns("pass")
+            Me.columnime = MyBase.Columns("ime")
+            Me.columnpriimek = MyBase.Columns("priimek")
+            Me.columnnaslov = MyBase.Columns("naslov")
+            Me.columneposta = MyBase.Columns("eposta")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Private Sub InitClass()
-            Me.columnusername = New Global.System.Data.DataColumn("username", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnusername)
-            Me.columnpass = New Global.System.Data.DataColumn("pass", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnpass)
-            Me.columnusername.AllowDBNull = false
-            Me.columnusername.MaxLength = 50
-            Me.columnpass.AllowDBNull = false
-            Me.columnpass.MaxLength = 50
+            Me.columnime = New Global.System.Data.DataColumn("ime", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnime)
+            Me.columnpriimek = New Global.System.Data.DataColumn("priimek", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnpriimek)
+            Me.columnnaslov = New Global.System.Data.DataColumn("naslov", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnnaslov)
+            Me.columneposta = New Global.System.Data.DataColumn("eposta", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columneposta)
+            Me.columnime.AllowDBNull = false
+            Me.columnime.MaxLength = 50
+            Me.columnpriimek.AllowDBNull = false
+            Me.columnpriimek.MaxLength = 50
+            Me.columnnaslov.AllowDBNull = false
+            Me.columnnaslov.MaxLength = 50
+            Me.columneposta.AllowDBNull = false
+            Me.columneposta.MaxLength = 50
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function NewusersRow() As usersRow
-            Return CType(Me.NewRow,usersRow)
+        Public Function NewstrankeRow() As strankeRow
+            Return CType(Me.NewRow,strankeRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New usersRow(builder)
+            Return New strankeRow(builder)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(usersRow)
+            Return GetType(strankeRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanged(e)
-            If (Not (Me.usersRowChangedEvent) Is Nothing) Then
-                RaiseEvent usersRowChanged(Me, New usersRowChangeEvent(CType(e.Row,usersRow), e.Action))
+            If (Not (Me.strankeRowChangedEvent) Is Nothing) Then
+                RaiseEvent strankeRowChanged(Me, New strankeRowChangeEvent(CType(e.Row,strankeRow), e.Action))
             End If
         End Sub
         
@@ -483,8 +478,8 @@ Partial Public Class ma_databaseDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanging(e)
-            If (Not (Me.usersRowChangingEvent) Is Nothing) Then
-                RaiseEvent usersRowChanging(Me, New usersRowChangeEvent(CType(e.Row,usersRow), e.Action))
+            If (Not (Me.strankeRowChangingEvent) Is Nothing) Then
+                RaiseEvent strankeRowChanging(Me, New strankeRowChangeEvent(CType(e.Row,strankeRow), e.Action))
             End If
         End Sub
         
@@ -492,8 +487,8 @@ Partial Public Class ma_databaseDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleted(e)
-            If (Not (Me.usersRowDeletedEvent) Is Nothing) Then
-                RaiseEvent usersRowDeleted(Me, New usersRowChangeEvent(CType(e.Row,usersRow), e.Action))
+            If (Not (Me.strankeRowDeletedEvent) Is Nothing) Then
+                RaiseEvent strankeRowDeleted(Me, New strankeRowChangeEvent(CType(e.Row,strankeRow), e.Action))
             End If
         End Sub
         
@@ -501,14 +496,14 @@ Partial Public Class ma_databaseDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleting(e)
-            If (Not (Me.usersRowDeletingEvent) Is Nothing) Then
-                RaiseEvent usersRowDeleting(Me, New usersRowChangeEvent(CType(e.Row,usersRow), e.Action))
+            If (Not (Me.strankeRowDeletingEvent) Is Nothing) Then
+                RaiseEvent strankeRowDeleting(Me, New strankeRowChangeEvent(CType(e.Row,strankeRow), e.Action))
             End If
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub RemoveusersRow(ByVal row As usersRow)
+        Public Sub RemovestrankeRow(ByVal row As strankeRow)
             Me.Rows.Remove(row)
         End Sub
         
@@ -517,7 +512,7 @@ Partial Public Class ma_databaseDataSet
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As ma_databaseDataSet = New ma_databaseDataSet()
+            Dim ds As ma_databaseDataSet1 = New ma_databaseDataSet1()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -535,246 +530,7 @@ Partial Public Class ma_databaseDataSet
             type.Attributes.Add(attribute1)
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "usersDataTable"
-            type.Attributes.Add(attribute2)
-            type.Particle = sequence
-            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
-            If xs.Contains(dsSchema.TargetNamespace) Then
-                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
-                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
-                Try 
-                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
-                    dsSchema.Write(s1)
-                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
-                    Do While schemas.MoveNext
-                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
-                        s2.SetLength(0)
-                        schema.Write(s2)
-                        If (s1.Length = s2.Length) Then
-                            s1.Position = 0
-                            s2.Position = 0
-                            
-                            Do While ((s1.Position <> s1.Length)  _
-                                        AndAlso (s1.ReadByte = s2.ReadByte))
-                                
-                                
-                            Loop
-                            If (s1.Position = s1.Length) Then
-                                Return type
-                            End If
-                        End If
-                        
-                    Loop
-                Finally
-                    If (Not (s1) Is Nothing) Then
-                        s1.Close
-                    End If
-                    If (Not (s2) Is Nothing) Then
-                        s2.Close
-                    End If
-                End Try
-            End If
-            xs.Add(dsSchema)
-            Return type
-        End Function
-    End Class
-    
-    '''<summary>
-    '''Represents the strongly named DataTable class.
-    '''</summary>
-    <Global.System.Serializable(),  _
-     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class DataTable1DataTable
-        Inherits Global.System.Data.TypedTableBase(Of DataTable1Row)
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub New()
-            MyBase.New
-            Me.TableName = "DataTable1"
-            Me.BeginInit
-            Me.InitClass
-            Me.EndInit
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Friend Sub New(ByVal table As Global.System.Data.DataTable)
-            MyBase.New
-            Me.TableName = table.TableName
-            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
-                Me.CaseSensitive = table.CaseSensitive
-            End If
-            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
-                Me.Locale = table.Locale
-            End If
-            If (table.Namespace <> table.DataSet.Namespace) Then
-                Me.Namespace = table.Namespace
-            End If
-            Me.Prefix = table.Prefix
-            Me.MinimumCapacity = table.MinimumCapacity
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
-            MyBase.New(info, context)
-            Me.InitVars
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
-         Global.System.ComponentModel.Browsable(false)>  _
-        Public ReadOnly Property Count() As Integer
-            Get
-                Return Me.Rows.Count
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As DataTable1Row
-            Get
-                Return CType(Me.Rows(index),DataTable1Row)
-            End Get
-        End Property
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event DataTable1RowChanging As DataTable1RowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event DataTable1RowChanged As DataTable1RowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event DataTable1RowDeleting As DataTable1RowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event DataTable1RowDeleted As DataTable1RowChangeEventHandler
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Sub AddDataTable1Row(ByVal row As DataTable1Row)
-            Me.Rows.Add(row)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Function AddDataTable1Row() As DataTable1Row
-            Dim rowDataTable1Row As DataTable1Row = CType(Me.NewRow,DataTable1Row)
-            Dim columnValuesArray(-1) As Object
-            rowDataTable1Row.ItemArray = columnValuesArray
-            Me.Rows.Add(rowDataTable1Row)
-            Return rowDataTable1Row
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As DataTable1DataTable = CType(MyBase.Clone,DataTable1DataTable)
-            cln.InitVars
-            Return cln
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New DataTable1DataTable()
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Friend Sub InitVars()
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Private Sub InitClass()
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function NewDataTable1Row() As DataTable1Row
-            Return CType(Me.NewRow,DataTable1Row)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New DataTable1Row(builder)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(DataTable1Row)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowChanged(e)
-            If (Not (Me.DataTable1RowChangedEvent) Is Nothing) Then
-                RaiseEvent DataTable1RowChanged(Me, New DataTable1RowChangeEvent(CType(e.Row,DataTable1Row), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowChanging(e)
-            If (Not (Me.DataTable1RowChangingEvent) Is Nothing) Then
-                RaiseEvent DataTable1RowChanging(Me, New DataTable1RowChangeEvent(CType(e.Row,DataTable1Row), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowDeleted(e)
-            If (Not (Me.DataTable1RowDeletedEvent) Is Nothing) Then
-                RaiseEvent DataTable1RowDeleted(Me, New DataTable1RowChangeEvent(CType(e.Row,DataTable1Row), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowDeleting(e)
-            If (Not (Me.DataTable1RowDeletingEvent) Is Nothing) Then
-                RaiseEvent DataTable1RowDeleting(Me, New DataTable1RowChangeEvent(CType(e.Row,DataTable1Row), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub RemoveDataTable1Row(ByVal row As DataTable1Row)
-            Me.Rows.Remove(row)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
-            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
-            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As ma_databaseDataSet = New ma_databaseDataSet()
-            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
-            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
-            any1.MinOccurs = New Decimal(0)
-            any1.MaxOccurs = Decimal.MaxValue
-            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
-            sequence.Items.Add(any1)
-            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
-            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
-            any2.MinOccurs = New Decimal(1)
-            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
-            sequence.Items.Add(any2)
-            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
-            attribute1.Name = "namespace"
-            attribute1.FixedValue = ds.Namespace
-            type.Attributes.Add(attribute1)
-            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
-            attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "DataTable1DataTable"
+            attribute2.FixedValue = "strankeDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -821,90 +577,60 @@ Partial Public Class ma_databaseDataSet
     '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
-    Partial Public Class usersRow
+    Partial Public Class strankeRow
         Inherits Global.System.Data.DataRow
         
-        Private tableusers As usersDataTable
+        Private tablestranke As strankeDataTable
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
             MyBase.New(rb)
-            Me.tableusers = CType(Me.Table,usersDataTable)
+            Me.tablestranke = CType(Me.Table,strankeDataTable)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property username() As String
+        Public Property ime() As String
             Get
-                Return CType(Me(Me.tableusers.usernameColumn),String)
+                Return CType(Me(Me.tablestranke.imeColumn),String)
             End Get
             Set
-                Me(Me.tableusers.usernameColumn) = value
+                Me(Me.tablestranke.imeColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property pass() As String
+        Public Property priimek() As String
             Get
-                Return CType(Me(Me.tableusers.passColumn),String)
+                Return CType(Me(Me.tablestranke.priimekColumn),String)
             End Get
             Set
-                Me(Me.tableusers.passColumn) = value
+                Me(Me.tablestranke.priimekColumn) = value
             End Set
         End Property
-    End Class
-    
-    '''<summary>
-    '''Represents strongly named DataRow class.
-    '''</summary>
-    Partial Public Class DataTable1Row
-        Inherits Global.System.Data.DataRow
-        
-        Private tableDataTable1 As DataTable1DataTable
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
-            MyBase.New(rb)
-            Me.tableDataTable1 = CType(Me.Table,DataTable1DataTable)
-        End Sub
-    End Class
-    
-    '''<summary>
-    '''Row event argument class
-    '''</summary>
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-    Public Class usersRowChangeEvent
-        Inherits Global.System.EventArgs
-        
-        Private eventRow As usersRow
-        
-        Private eventAction As Global.System.Data.DataRowAction
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub New(ByVal row As usersRow, ByVal action As Global.System.Data.DataRowAction)
-            MyBase.New
-            Me.eventRow = row
-            Me.eventAction = action
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property Row() As usersRow
+        Public Property naslov() As String
             Get
-                Return Me.eventRow
+                Return CType(Me(Me.tablestranke.naslovColumn),String)
             End Get
+            Set
+                Me(Me.tablestranke.naslovColumn) = value
+            End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
+        Public Property eposta() As String
             Get
-                Return Me.eventAction
+                Return CType(Me(Me.tablestranke.epostaColumn),String)
             End Get
+            Set
+                Me(Me.tablestranke.epostaColumn) = value
+            End Set
         End Property
     End Class
     
@@ -912,16 +638,16 @@ Partial Public Class ma_databaseDataSet
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-    Public Class DataTable1RowChangeEvent
+    Public Class strankeRowChangeEvent
         Inherits Global.System.EventArgs
         
-        Private eventRow As DataTable1Row
+        Private eventRow As strankeRow
         
         Private eventAction As Global.System.Data.DataRowAction
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub New(ByVal row As DataTable1Row, ByVal action As Global.System.Data.DataRowAction)
+        Public Sub New(ByVal row As strankeRow, ByVal action As Global.System.Data.DataRowAction)
             MyBase.New
             Me.eventRow = row
             Me.eventAction = action
@@ -929,7 +655,7 @@ Partial Public Class ma_databaseDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property Row() As DataTable1Row
+        Public ReadOnly Property Row() As strankeRow
             Get
                 Return Me.eventRow
             End Get
@@ -945,7 +671,7 @@ Partial Public Class ma_databaseDataSet
     End Class
 End Class
 
-Namespace ma_databaseDataSetTableAdapters
+Namespace ma_databaseDataSet1TableAdapters
     
     '''<summary>
     '''Represents the connection and commands used to retrieve and save data.
@@ -956,7 +682,7 @@ Namespace ma_databaseDataSetTableAdapters
      Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
      Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class usersTableAdapter
+    Partial Public Class strankeTableAdapter
         Inherits Global.System.ComponentModel.Component
         
         Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
@@ -1073,16 +799,21 @@ Namespace ma_databaseDataSetTableAdapters
             Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
             Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
             tableMapping.SourceTable = "Table"
-            tableMapping.DataSetTable = "users"
-            tableMapping.ColumnMappings.Add("username", "username")
-            tableMapping.ColumnMappings.Add("pass", "pass")
+            tableMapping.DataSetTable = "stranke"
+            tableMapping.ColumnMappings.Add("ime", "ime")
+            tableMapping.ColumnMappings.Add("priimek", "priimek")
+            tableMapping.ColumnMappings.Add("naslov", "naslov")
+            tableMapping.ColumnMappings.Add("eposta", "eposta")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[users] ([username], [pass]) VALUES (@username, @pass)"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[stranke] ([ime], [priimek], [naslov], [eposta]) VALUES (@ime, "& _ 
+                "@priimek, @naslov, @eposta)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@username", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "username", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@pass", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "pass", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ime", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ime", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@priimek", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "priimek", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@naslov", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "naslov", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@eposta", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "eposta", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1095,18 +826,22 @@ Namespace ma_databaseDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT username, pass FROM dbo.users"
+            Me._commandCollection(0).CommandText = "SELECT ime, priimek, naslov, eposta FROM dbo.stranke"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(1).Connection = Me.Connection
+            Me._commandCollection(1).CommandText = "SELECT ime, priimek, naslov, eposta FROM dbo.stranke"
+            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As ma_databaseDataSet.usersDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As ma_databaseDataSet1.strankeDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -1119,25 +854,38 @@ Namespace ma_databaseDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As ma_databaseDataSet.usersDataTable
+        Public Overloads Overridable Function GetData() As ma_databaseDataSet1.strankeDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As ma_databaseDataSet.usersDataTable = New ma_databaseDataSet.usersDataTable()
+            Dim dataTable As ma_databaseDataSet1.strankeDataTable = New ma_databaseDataSet1.strankeDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillBy(ByVal dataTable As ma_databaseDataSet1.strankeDataTable) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As ma_databaseDataSet.usersDataTable) As Integer
+        Public Overloads Overridable Function Update(ByVal dataTable As ma_databaseDataSet1.strankeDataTable) As Integer
             Return Me.Adapter.Update(dataTable)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataSet As ma_databaseDataSet) As Integer
-            Return Me.Adapter.Update(dataSet, "users")
+        Public Overloads Overridable Function Update(ByVal dataSet As ma_databaseDataSet1) As Integer
+            Return Me.Adapter.Update(dataSet, "stranke")
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1158,16 +906,26 @@ Namespace ma_databaseDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal username As String, ByVal pass As String) As Integer
-            If (username Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("username")
+        Public Overloads Overridable Function Insert(ByVal ime As String, ByVal priimek As String, ByVal naslov As String, ByVal eposta As String) As Integer
+            If (ime Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("ime")
             Else
-                Me.Adapter.InsertCommand.Parameters(0).Value = CType(username,String)
+                Me.Adapter.InsertCommand.Parameters(0).Value = CType(ime,String)
             End If
-            If (pass Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("pass")
+            If (priimek Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("priimek")
             Else
-                Me.Adapter.InsertCommand.Parameters(1).Value = CType(pass,String)
+                Me.Adapter.InsertCommand.Parameters(1).Value = CType(priimek,String)
+            End If
+            If (naslov Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("naslov")
+            Else
+                Me.Adapter.InsertCommand.Parameters(2).Value = CType(naslov,String)
+            End If
+            If (eposta Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("eposta")
+            Else
+                Me.Adapter.InsertCommand.Parameters(3).Value = CType(eposta,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -1198,7 +956,7 @@ Namespace ma_databaseDataSetTableAdapters
         
         Private _updateOrder As UpdateOrderOption
         
-        Private _usersTableAdapter As usersTableAdapter
+        Private _strankeTableAdapter As strankeTableAdapter
         
         Private _backupDataSetBeforeUpdate As Boolean
         
@@ -1220,12 +978,12 @@ Namespace ma_databaseDataSetTableAdapters
          Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
             "a", "System.Drawing.Design.UITypeEditor")>  _
-        Public Property usersTableAdapter() As usersTableAdapter
+        Public Property strankeTableAdapter() As strankeTableAdapter
             Get
-                Return Me._usersTableAdapter
+                Return Me._strankeTableAdapter
             End Get
             Set
-                Me._usersTableAdapter = value
+                Me._strankeTableAdapter = value
             End Set
         End Property
         
@@ -1248,9 +1006,9 @@ Namespace ma_databaseDataSetTableAdapters
                 If (Not (Me._connection) Is Nothing) Then
                     Return Me._connection
                 End If
-                If ((Not (Me._usersTableAdapter) Is Nothing)  _
-                            AndAlso (Not (Me._usersTableAdapter.Connection) Is Nothing)) Then
-                    Return Me._usersTableAdapter.Connection
+                If ((Not (Me._strankeTableAdapter) Is Nothing)  _
+                            AndAlso (Not (Me._strankeTableAdapter.Connection) Is Nothing)) Then
+                    Return Me._strankeTableAdapter.Connection
                 End If
                 Return Nothing
             End Get
@@ -1265,7 +1023,7 @@ Namespace ma_databaseDataSetTableAdapters
         Public ReadOnly Property TableAdapterInstanceCount() As Integer
             Get
                 Dim count As Integer = 0
-                If (Not (Me._usersTableAdapter) Is Nothing) Then
+                If (Not (Me._strankeTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
                 Return count
@@ -1277,14 +1035,14 @@ Namespace ma_databaseDataSetTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Private Function UpdateUpdatedRows(ByVal dataSet As ma_databaseDataSet, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateUpdatedRows(ByVal dataSet As ma_databaseDataSet1, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._usersTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.users.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+            If (Not (Me._strankeTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.stranke.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._usersTableAdapter.Update(updatedRows))
+                    result = (result + Me._strankeTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -1296,13 +1054,13 @@ Namespace ma_databaseDataSetTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Private Function UpdateInsertedRows(ByVal dataSet As ma_databaseDataSet, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateInsertedRows(ByVal dataSet As ma_databaseDataSet1, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._usersTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.users.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+            If (Not (Me._strankeTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.stranke.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._usersTableAdapter.Update(addedRows))
+                    result = (result + Me._strankeTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -1314,13 +1072,13 @@ Namespace ma_databaseDataSetTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Private Function UpdateDeletedRows(ByVal dataSet As ma_databaseDataSet, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateDeletedRows(ByVal dataSet As ma_databaseDataSet1, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._usersTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.users.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+            If (Not (Me._strankeTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.stranke.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._usersTableAdapter.Update(deletedRows))
+                    result = (result + Me._strankeTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -1358,15 +1116,15 @@ Namespace ma_databaseDataSetTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overridable Function UpdateAll(ByVal dataSet As ma_databaseDataSet) As Integer
+        Public Overridable Function UpdateAll(ByVal dataSet As ma_databaseDataSet1) As Integer
             If (dataSet Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("dataSet")
             End If
             If (dataSet.HasChanges = false) Then
                 Return 0
             End If
-            If ((Not (Me._usersTableAdapter) Is Nothing)  _
-                        AndAlso (Me.MatchTableAdapterConnection(Me._usersTableAdapter.Connection) = false)) Then
+            If ((Not (Me._strankeTableAdapter) Is Nothing)  _
+                        AndAlso (Me.MatchTableAdapterConnection(Me._strankeTableAdapter.Connection) = false)) Then
                 Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
                         "tring.")
             End If
@@ -1402,13 +1160,13 @@ Namespace ma_databaseDataSetTableAdapters
             Try 
                 '---- Prepare for update -----------
                 '
-                If (Not (Me._usersTableAdapter) Is Nothing) Then
-                    revertConnections.Add(Me._usersTableAdapter, Me._usersTableAdapter.Connection)
-                    Me._usersTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
-                    Me._usersTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
-                    If Me._usersTableAdapter.Adapter.AcceptChangesDuringUpdate Then
-                        Me._usersTableAdapter.Adapter.AcceptChangesDuringUpdate = false
-                        adaptersWithAcceptChangesDuringUpdate.Add(Me._usersTableAdapter.Adapter)
+                If (Not (Me._strankeTableAdapter) Is Nothing) Then
+                    revertConnections.Add(Me._strankeTableAdapter, Me._strankeTableAdapter.Connection)
+                    Me._strankeTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
+                    Me._strankeTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
+                    If Me._strankeTableAdapter.Adapter.AcceptChangesDuringUpdate Then
+                        Me._strankeTableAdapter.Adapter.AcceptChangesDuringUpdate = false
+                        adaptersWithAcceptChangesDuringUpdate.Add(Me._strankeTableAdapter.Adapter)
                     End If
                 End If
                 '
@@ -1471,9 +1229,9 @@ Namespace ma_databaseDataSetTableAdapters
                 If workConnOpened Then
                     workConnection.Close
                 End If
-                If (Not (Me._usersTableAdapter) Is Nothing) Then
-                    Me._usersTableAdapter.Connection = CType(revertConnections(Me._usersTableAdapter),Global.System.Data.SqlClient.SqlConnection)
-                    Me._usersTableAdapter.Transaction = Nothing
+                If (Not (Me._strankeTableAdapter) Is Nothing) Then
+                    Me._strankeTableAdapter.Connection = CType(revertConnections(Me._strankeTableAdapter),Global.System.Data.SqlClient.SqlConnection)
+                    Me._strankeTableAdapter.Transaction = Nothing
                 End If
                 If (0 < adaptersWithAcceptChangesDuringUpdate.Count) Then
                     Dim adapters((adaptersWithAcceptChangesDuringUpdate.Count) - 1) As Global.System.Data.Common.DataAdapter

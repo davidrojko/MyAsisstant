@@ -79,6 +79,17 @@
     <Compile Include="dodaj_stranko.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="odstrani_stranko.Designer.vb">
+      <DependentUpon>odstrani_stranko.vb</DependentUpon>
+    </Compile>
+    <Compile Include="odstrani_stranko.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ma_databaseDataSet11.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ma_databaseDataSet11.xsd</DependentUpon>
+    </Compile>
     <Compile Include="pregled_strank.Designer.vb">
       <DependentUpon>pregled_strank.vb</DependentUpon>
     </Compile>
@@ -123,6 +134,9 @@
     <EmbeddedResource Include="dodaj_stranko.resx">
       <DependentUpon>dodaj_stranko.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="odstrani_stranko.resx">
+      <DependentUpon>odstrani_stranko.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="pregled_strank.resx">
       <DependentUpon>pregled_strank.vb</DependentUpon>
     </EmbeddedResource>
@@ -150,6 +164,17 @@
     </None>
     <None Include="ma_databaseDataSet.xss">
       <DependentUpon>ma_databaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ma_databaseDataSet11.xsc">
+      <DependentUpon>ma_databaseDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="ma_databaseDataSet11.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ma_databaseDataSet11.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ma_databaseDataSet11.xss">
+      <DependentUpon>ma_databaseDataSet11.xsd</DependentUpon>
     </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>

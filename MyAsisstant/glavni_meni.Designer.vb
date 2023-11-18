@@ -38,7 +38,7 @@ Partial Class glavni_meni
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.StrankeToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1806, 56)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1806, 61)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -46,7 +46,7 @@ Partial Class glavni_meni
         '
         Me.StrankeToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DodajStrankoToolStripMenuItem, Me.OdstraniStrankoToolStripMenuItem, Me.PregledStrankToolStripMenuItem})
         Me.StrankeToolStripMenuItem.Name = "StrankeToolStripMenuItem"
-        Me.StrankeToolStripMenuItem.Size = New System.Drawing.Size(166, 52)
+        Me.StrankeToolStripMenuItem.Size = New System.Drawing.Size(166, 57)
         Me.StrankeToolStripMenuItem.Text = "Stranke"
         '
         'DodajStrankoToolStripMenuItem

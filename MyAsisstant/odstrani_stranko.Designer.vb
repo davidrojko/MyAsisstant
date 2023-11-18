@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class pregled_strank
+Partial Class odstrani_stranko
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -24,70 +24,34 @@ Partial Class pregled_strank
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.MadatabaseDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Ma_databaseDataSet = New MyAsisstant.ma_databaseDataSet()
-        Me.DataTable1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Ma_databaseDataSet1 = New MyAsisstant.ma_databaseDataSet1()
-        Me.StrankeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.StrankeTableAdapter = New MyAsisstant.ma_databaseDataSet1TableAdapters.strankeTableAdapter()
         Me.ImeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PriimekDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NaslovDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.EpostaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.StrankeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Ma_databaseDataSet1 = New MyAsisstant.ma_databaseDataSet1()
+        Me.StrankeTableAdapter = New MyAsisstant.ma_databaseDataSet1TableAdapters.strankeTableAdapter()
+        Me.odstrani_btn = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.MadatabaseDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Ma_databaseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataTable1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Ma_databaseDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.StrankeBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Ma_databaseDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DataGridView1
         '
         Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.AllowUserToDeleteRows = False
         Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ImeDataGridViewTextBoxColumn, Me.PriimekDataGridViewTextBoxColumn, Me.NaslovDataGridViewTextBoxColumn, Me.EpostaDataGridViewTextBoxColumn})
         Me.DataGridView1.DataSource = Me.StrankeBindingSource
-        Me.DataGridView1.Location = New System.Drawing.Point(74, 42)
+        Me.DataGridView1.Location = New System.Drawing.Point(105, 80)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersWidth = 123
         Me.DataGridView1.RowTemplate.Height = 46
-        Me.DataGridView1.Size = New System.Drawing.Size(1467, 730)
+        Me.DataGridView1.Size = New System.Drawing.Size(1430, 528)
         Me.DataGridView1.TabIndex = 0
-        '
-        'MadatabaseDataSetBindingSource
-        '
-        Me.MadatabaseDataSetBindingSource.DataSource = Me.Ma_databaseDataSet
-        Me.MadatabaseDataSetBindingSource.Position = 0
-        '
-        'Ma_databaseDataSet
-        '
-        Me.Ma_databaseDataSet.DataSetName = "ma_databaseDataSet"
-        Me.Ma_databaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'DataTable1BindingSource
-        '
-        Me.DataTable1BindingSource.DataMember = "DataTable1"
-        Me.DataTable1BindingSource.DataSource = Me.MadatabaseDataSetBindingSource
-        '
-        'Ma_databaseDataSet1
-        '
-        Me.Ma_databaseDataSet1.DataSetName = "ma_databaseDataSet1"
-        Me.Ma_databaseDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'StrankeBindingSource
-        '
-        Me.StrankeBindingSource.DataMember = "stranke"
-        Me.StrankeBindingSource.DataSource = Me.Ma_databaseDataSet1
-        '
-        'StrankeTableAdapter
-        '
-        Me.StrankeTableAdapter.ClearBeforeFill = True
         '
         'ImeDataGridViewTextBoxColumn
         '
@@ -95,7 +59,6 @@ Partial Class pregled_strank
         Me.ImeDataGridViewTextBoxColumn.HeaderText = "ime"
         Me.ImeDataGridViewTextBoxColumn.MinimumWidth = 15
         Me.ImeDataGridViewTextBoxColumn.Name = "ImeDataGridViewTextBoxColumn"
-        Me.ImeDataGridViewTextBoxColumn.ReadOnly = True
         '
         'PriimekDataGridViewTextBoxColumn
         '
@@ -103,7 +66,6 @@ Partial Class pregled_strank
         Me.PriimekDataGridViewTextBoxColumn.HeaderText = "priimek"
         Me.PriimekDataGridViewTextBoxColumn.MinimumWidth = 15
         Me.PriimekDataGridViewTextBoxColumn.Name = "PriimekDataGridViewTextBoxColumn"
-        Me.PriimekDataGridViewTextBoxColumn.ReadOnly = True
         '
         'NaslovDataGridViewTextBoxColumn
         '
@@ -111,7 +73,6 @@ Partial Class pregled_strank
         Me.NaslovDataGridViewTextBoxColumn.HeaderText = "naslov"
         Me.NaslovDataGridViewTextBoxColumn.MinimumWidth = 15
         Me.NaslovDataGridViewTextBoxColumn.Name = "NaslovDataGridViewTextBoxColumn"
-        Me.NaslovDataGridViewTextBoxColumn.ReadOnly = True
         '
         'EpostaDataGridViewTextBoxColumn
         '
@@ -119,30 +80,47 @@ Partial Class pregled_strank
         Me.EpostaDataGridViewTextBoxColumn.HeaderText = "eposta"
         Me.EpostaDataGridViewTextBoxColumn.MinimumWidth = 15
         Me.EpostaDataGridViewTextBoxColumn.Name = "EpostaDataGridViewTextBoxColumn"
-        Me.EpostaDataGridViewTextBoxColumn.ReadOnly = True
         '
-        'pregled_strank
+        'StrankeBindingSource
+        '
+        Me.StrankeBindingSource.DataMember = "stranke"
+        Me.StrankeBindingSource.DataSource = Me.Ma_databaseDataSet1
+        '
+        'Ma_databaseDataSet1
+        '
+        Me.Ma_databaseDataSet1.DataSetName = "ma_databaseDataSet1"
+        Me.Ma_databaseDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'StrankeTableAdapter
+        '
+        Me.StrankeTableAdapter.ClearBeforeFill = True
+        '
+        'odstrani_btn
+        '
+        Me.odstrani_btn.Location = New System.Drawing.Point(596, 662)
+        Me.odstrani_btn.Name = "odstrani_btn"
+        Me.odstrani_btn.Size = New System.Drawing.Size(401, 80)
+        Me.odstrani_btn.TabIndex = 1
+        Me.odstrani_btn.Text = "Odstrani"
+        Me.odstrani_btn.UseVisualStyleBackColor = True
+        '
+        'odstrani_stranko
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(19.0!, 37.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1614, 814)
+        Me.ClientSize = New System.Drawing.Size(1631, 791)
+        Me.Controls.Add(Me.odstrani_btn)
         Me.Controls.Add(Me.DataGridView1)
-        Me.Name = "pregled_strank"
-        Me.Text = "Pregled strank"
+        Me.Name = "odstrani_stranko"
+        Me.Text = "Odstrani stranko"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.MadatabaseDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Ma_databaseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataTable1BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Ma_databaseDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.StrankeBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Ma_databaseDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents MadatabaseDataSetBindingSource As BindingSource
-    Friend WithEvents Ma_databaseDataSet As ma_databaseDataSet
-    Friend WithEvents DataTable1BindingSource As BindingSource
     Friend WithEvents Ma_databaseDataSet1 As ma_databaseDataSet1
     Friend WithEvents StrankeBindingSource As BindingSource
     Friend WithEvents StrankeTableAdapter As ma_databaseDataSet1TableAdapters.strankeTableAdapter
@@ -150,4 +128,5 @@ Partial Class pregled_strank
     Friend WithEvents PriimekDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents NaslovDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents EpostaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents odstrani_btn As Button
 End Class
